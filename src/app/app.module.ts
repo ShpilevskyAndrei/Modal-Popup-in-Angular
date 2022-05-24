@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToastComponent } from './toasts/toast/toast.component';
-import { ToastsLayoutComponent } from './toasts/toasts-layout/toasts-layout.component';
+import { ToastComponent } from "./toasts/toast/toast.component";
+import { ToastsLayoutComponent } from "./toasts/toasts-layout/toasts-layout.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ToastComponent,
-    ToastsLayoutComponent
+    ToastsLayoutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
