@@ -5,3 +5,5 @@ export enum ToastType {
   success = 'success',
   system = 'system',
 }
+
+export type toastType = keyof typeof ToastType

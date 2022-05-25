@@ -1,1 +1,26 @@
-<p>toast works!</p>
+<div class="toast {{toastType}} {{width}}">
+  <div class="toast-container-without-action-button">
+    <div class="icon-text-container">
+      <div class="icon-container">
+        <mat-icon class="icon {{toastType}}-icon">{{icon}}</mat-icon>
+      </div>
+      <div class="text-container">
+        <p style="margin: 10px 0">
+          <b>{{toastHeader}}</b>
+          <br/>
+          {{toastText}}
+        </p>
+      </div>
+    </div>
+      <div class="close-button-container">
+        <mat-icon class="button-pointer">close</mat-icon>
+      </div>
+  </div>
+    <div class="action-button-container">
+      <button class="action-button-for-{{toastType}} button-pointer action-button"
+      *ngIf="button"
+              (click)="exFunc()">
+        {{actionButtonText}}
+      </button>
+    </div>
+</div>

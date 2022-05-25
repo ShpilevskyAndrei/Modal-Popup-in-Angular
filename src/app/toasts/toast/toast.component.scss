@@ -1,77 +1,162 @@
-//host {
-//  .toast {
-//    border: 1px solid;
-//    border-radius: 4px;
-//    padding: 10px;
-//    display: flex;
-//    flex-flow: row nowrap;
-//    align-items: center;
-//    align-content: center;
-//    position: relative;
-//    margin: 0 0 10px 0;
-//    animation-duration: 1s;
-//    animation-name: slideIn;
-//  }
-//
-//  .toast-small {
-//    height: 32px;
-//    max-width: 200px;
-//    width: 200px;
-//  }
-//
-//  .toast-big {
-//    height: 64px;
-//    max-width: 400px;
-//    width: 400px;
-//  }
-//
-//  @media only screen and (max-width: 600px) {
-//    .toast {
-//      width: auto;
-//    }
-//  }
-//
-//  @keyframes slideIn {
-//    from {
-//      margin-top: -20%;
-//      opacity: 0;
-//    }
-//
-//    to {
-//      margin-top: 0;
-//      opacity: 1;
-//    }
-//  }
-//
-//  .toast-closing {
-//    animation-duration: 1s;
-//    animation-name: slideOut;
-//  }
-//
-//  @keyframes slideOut {
-//    from {
-//      opacity: 1;
-//    }
-//
-//    to {
-//      opacity: 0;
-//    }
-//  }
-//
-//  .close-button {
-//    position: absolute;
-//    text-decoration: none;
-//    color: black;
-//    right: 10px;
-//    font-size: 25px;
-//    cursor: pointer;
-//  }
-//
-//  .image {
-//    margin: 10px;
-//  }
-//
-//  .button {
-//    cursor: pointer;
-//  }
-//}
+//containers
+.toast {
+    border: 1px solid;
+    border-radius: 4px;
+    display: block;
+    align-items: center;
+    align-content: center;
+    margin: 0 0 10px 0;
+    animation-duration: 1s;
+    animation-name: slideIn;
+    justify-content: space-between;
+    height: auto;
+  }
+
+.toast-container-without-action-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-text-container {
+  display: flex
+}
+
+.close-button-container {
+  margin: 10px;
+}
+
+.action-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//sizes
+  .short {
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .long {
+    width: 400px;
+    max-width: 400px;
+  }
+
+//popup show animation
+  @media only screen and (max-width: 600px) {
+    .toast {
+      width: auto;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      margin-top: -20%;
+      opacity: 0;
+    }
+
+    to {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+
+//popup close animation
+  .toast-closing {
+    animation-duration: 1s;
+    animation-name: slideOut;
+  }
+
+  @keyframes slideOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+//popups styles
+.error {
+  background-color: #FDECE9;
+  border-color: #EB3D26;
+}
+
+.warning {
+  background-color: #FFF1E7;
+  border-color: #FA9850;
+}
+
+.info {
+  background-color: #F2F5F5;
+  border-color: #798787;
+}
+
+.success {
+  background-color: #ECF9F4;
+  border-color: #12AB74;
+}
+
+.system {
+  background-color: #EEF7FF;
+  border-color: #368ACE;
+}
+
+//icons
+
+  .icon {
+    margin: 10px;
+  }
+
+  .error-icon {
+    color: #EB3D26;
+  }
+
+  .warning-icon {
+    color: #F87E25;
+  }
+
+  .info-icon {
+    color: #131314;
+  }
+
+  .success-icon {
+    color: #4CAF50;
+  }
+
+  .system-icon {
+    color: #368ACE;
+  }
+
+//buttons
+.button-pointer {
+  cursor: pointer;
+}
+
+.action-button {
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.action-button-for-error {
+  background-color: #DC3737;
+}
+
+.action-button-for-warning {
+  background-color: #F87E25;
+}
+
+.action-button-for-info {
+  background-color: #131314;
+}
+
+.action-button-for-success {
+  background-color: #12AB74;
+}
+
+.action-button-for-system {
+  background-color: #368ACE;
+}

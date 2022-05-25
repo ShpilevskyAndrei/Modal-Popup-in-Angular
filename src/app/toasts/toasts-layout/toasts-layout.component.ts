@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './toasts-layout.component.html',
   styleUrls: ['./toasts-layout.component.scss']
 })
-export class ToastsLayoutComponent {}
+export class ToastsLayoutComponent {
+
+}

@@ -3,7 +3,6 @@ import {ToastType} from "../enums/toast-type";
 export interface IToastOptions {
   toastType: ToastType,
   width: "short" | "long",
-  height: "small" | "medium" | "large"
   toastHeader: string,
   toastMessage: string,
   button: boolean,
@@ -14,7 +13,6 @@ export interface IToastOptions {
 // const popup: IToastOptions = {
 //   toastType: ToastType.error,
 //   width: "short",
-//   height: "medium",
 //   toastHeader: 'Wrong name',
 //   toastMessage: 'Please enter correct name',
 //   button: true,
