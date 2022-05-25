@@ -1,3 +1,5 @@
+//NOT USED
+
 export interface IToastTypeStyle {
   iconProp: {
     icon: string,

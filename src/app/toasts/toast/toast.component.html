@@ -2,14 +2,14 @@
   <div class="toast-container-without-action-button">
     <div class="icon-text-container">
       <div class="icon-container">
-        <mat-icon class="icon {{toastType}}-icon">{{icon}}</mat-icon>
+        <mat-icon class="icon {{toastType}}-icon">{{icon()}}</mat-icon>
       </div>
       <div class="text-container">
-        <p style="margin: 10px 0">
-          <b>{{toastHeader}}</b>
-          <br/>
-          {{toastText}}
-        </p>
+          <p style="margin: 10px 0">
+            <b>{{toastHeader}}</b>
+          </p>
+          <p *ngIf="toastTextAdd">{{toastText}}
+          </p>
       </div>
     </div>
       <div class="close-button-container">

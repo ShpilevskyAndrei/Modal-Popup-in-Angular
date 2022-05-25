@@ -1,3 +1,5 @@
+//NOT USED
+
 import {ToastType} from "../enums/toast-type";
 
 export interface IToastOptions {
