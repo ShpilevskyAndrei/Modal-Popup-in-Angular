@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { toastType } from "../enums/toast-type";
 import { iconType } from "../enums/icon-type";
 
+
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
@@ -33,23 +34,43 @@ export class ToastComponent {
   }
   // 'error_outline' | 'warning' | 'info' | 'check_circle_outline' | 'info
 
-  toastHeader: string | false = '' || `You didn't entry some ${this.toastType} title`; // any text
+  toastHeader: string = '' || `You didn't entry some ${this.toastType} title`; // any text
   // get value from set func
 
   toastTextAdd: boolean = true;
+  // get value from set func
 
-  toastText: string | false =
+  toastText: string =
     '' || `You didn't entry some ${this.toastType} message`; // any text
   // get value from set func
 
   button: boolean = true; // boolean
-  // get value from func
-
-  actionButtonText: string | false = '' || 'Ok';
   // get value from set func
 
-  exFunc() {
-    console.log(this.actionButtonText);
+  actionButtonTextGenerator = ():string | null=> {
+    if (this.toastType === 'error') {
+      return `Leave`
+    } else if (this.toastType === 'warning') {
+      return `Get started`
+    } else if (this.toastType === 'info') {
+      return `Okay`
+    } else if (this.toastType === 'success') {
+      return `Got it!`
+    } else if (this.toastType === 'system') {
+      return `Info`
+    } else {
+      return null
+    }
   }
+
+  actionButtonText = (): string | false => {
+    return ('' || `${this.actionButtonTextGenerator()}`)
+  }
+  // get value from set func
+
+  buttonTest() {
+    console.log(this.actionButtonText());
+  }
+
 }
 

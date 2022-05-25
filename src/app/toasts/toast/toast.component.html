@@ -1,11 +1,11 @@
-<div class="toast {{toastType}} {{width}}">
+<div class="toast {{toastType}} {{width}}" id="toast">
   <div class="toast-container-without-action-button">
     <div class="icon-text-container">
       <div class="icon-container">
         <mat-icon class="icon {{toastType}}-icon">{{icon()}}</mat-icon>
       </div>
       <div class="text-container">
-          <p style="margin: 10px 0">
+          <p>
             <b>{{toastHeader}}</b>
           </p>
           <p *ngIf="toastTextAdd">{{toastText}}
@@ -19,8 +19,8 @@
     <div class="action-button-container">
       <button class="action-button-for-{{toastType}} button-pointer action-button"
       *ngIf="button"
-              (click)="exFunc()">
-        {{actionButtonText}}
+              (click)="buttonTest()">
+        {{actionButtonText()}}
       </button>
     </div>
 </div>

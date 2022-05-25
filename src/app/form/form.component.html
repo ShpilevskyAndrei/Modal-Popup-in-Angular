@@ -1,0 +1,68 @@
+<form class="form-container">
+  <div>
+    <mat-form-field>
+      <mat-label>Select a type of toast</mat-label>
+      <mat-select name="toastType" [(ngModel)]="toastOption.toastType">
+        <mat-option value="error">Error</mat-option>
+        <mat-option value="warning">Warning</mat-option>
+        <mat-option value="success">Success</mat-option>
+        <mat-option value="info">Info</mat-option>
+        <mat-option value="system">System</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Select a width of toast</mat-label>
+      <mat-select name="width" [(ngModel)]="toastOption.width">
+        <mat-option value="short">Short</mat-option>
+        <mat-option value="long">Long</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Write the text for the title</mat-label>
+      <input matInput name="title" [(ngModel)]="toastOption.title">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Add text under title?</mat-label>
+      <mat-select name="addMessage" [(ngModel)]="toastOption.addMessage">
+        <mat-option value="true">Yes</mat-option>
+        <mat-option value="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Write the text under title</mat-label>
+      <input matInput name="message" [(ngModel)]="toastOption.message">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Add text under title?</mat-label>
+      <mat-select name="addButton" [(ngModel)]="toastOption.addButton">
+        <mat-option value="true">Yes</mat-option>
+        <mat-option value="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Button text</mat-label>
+      <input matInput name="buttonText" [(ngModel)]="toastOption.buttonText">
+    </mat-form-field>
+  </div>
+
+  <mat-button-toggle (click)="formTest()">SHOW GENERATED TOAST</mat-button-toggle>
+
+</form>
