@@ -6,9 +6,9 @@ import {
   BrowserAnimationsModule,
   NoopAnimationsModule
 } from '@angular/platform-browser/animations';
-import {AppContainerComponent} from "./app-container.component";
 
 import {AppComponent} from './app.component';
+import {ToastDataService} from "./toasts/toast-data-service";
 import {ToastComponent} from "./toasts/toast/toast.component";
 import {ToastsLayoutComponent} from "./toasts/toasts-layout/toasts-layout.component";
 
@@ -27,7 +27,6 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     ToastComponent,
     ToastsLayoutComponent,
     FormComponent,
-    AppContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +41,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     FormsModule,
     MatButtonToggleModule,
   ],
-  providers: [],
-  bootstrap: [AppContainerComponent]
+  providers: [ToastDataService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
