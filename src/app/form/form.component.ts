@@ -1,4 +1,4 @@
-import {Component, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -7,7 +7,9 @@ import {Component, Output} from '@angular/core';
 })
 export class FormComponent {
 
-  @Output() toastOption: any = {
+  @Output() formClicked: EventEmitter<any> = new EventEmitter<any>()
+
+  toastOption: any = {
     toastType: '' ,
     width: '',
     title: '',
@@ -17,7 +19,8 @@ export class FormComponent {
     buttonText: '',
   }
 
-  formTest(){
-    console.log(this.toastOption);
+  returnToastOptions (): void {
+    this.formClicked.emit(this.toastOption);
+    console.log(this.toastOption)
   }
 }
