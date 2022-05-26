@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {IToastOptions} from "./toasts/interfaces/toast-options";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @Input() public toastData: any
+
   title = 'modal-popup-in-angular';
-  toastData: any;
-  formClicked: any;
+
+  public formClicked(toastData:IToastOptions): void {
+    console.log('toastData', toastData)
+  }
 }

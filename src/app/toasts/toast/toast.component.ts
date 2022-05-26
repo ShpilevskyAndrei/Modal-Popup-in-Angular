@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
 
-import { toastType } from "../enums/toast-type";
-import { iconType } from "../enums/icon-type";
-import { FormComponent } from "../../form/form.component";
+import {toastType} from "../enums/toast-type";
+import {iconType} from "../enums/icon-type";
+import {IToastOptions} from "../interfaces/toast-options";
 
 
 @Component({
@@ -12,7 +12,9 @@ import { FormComponent } from "../../form/form.component";
 })
 
 export class ToastComponent {
+  @Input() public toastData!: IToastOptions;
 
+constructor() {}
   //ЗДЕСЬ ДОЛЖЕН БЫТЬ ОБЪЕКТ ИЗ FORM.COMP - toastOption
 
   toastType: toastType = 'info'; // 'error' | 'warning' | 'info' | 'success' | 'system'
@@ -36,7 +38,6 @@ export class ToastComponent {
       return null
     }
   }
-
   toastHeader: string = '' || `You didn't entry some ${this.toastType} title`; // any text
   // get value from set func
 
@@ -50,7 +51,7 @@ export class ToastComponent {
   button: boolean = true;
   // get value from set func
 
-  actionButtonTextGenerator = ():string | null=> {
+  actionButtonTextGenerator = (): string | null => {
     if (this.toastType === 'error') {
       return `Leave`
     } else if (this.toastType === 'warning') {
@@ -69,6 +70,7 @@ export class ToastComponent {
   actionButtonText = (): string | false => {
     return ('' || `${this.actionButtonTextGenerator()}`)
   }
+
   // get value from set func
 
   buttonTest() {

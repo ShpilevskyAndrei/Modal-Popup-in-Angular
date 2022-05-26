@@ -1,7 +1,7 @@
 <div class="between">
   <div class="main">
     <h2>NPM Module: Toasts on NG without ngx-toastr</h2>
-    <app-form (formClicked)="formClicked.$event"></app-form>
+    <app-form (formClicked)="formClicked($event)"></app-form>
   </div>
   <app-toast [toastData]="toastData" ></app-toast>
 </div>
