@@ -10,7 +10,7 @@ export class FormComponent {
   constructor(private toastService: ToastDataService) {
   }
 
-  toastOption: any = {
+  public toastOption: any = {
     toastType: '',
     width: '',
     title: '',

@@ -34,7 +34,7 @@
       <mat-label>Add text under title?</mat-label>
       <mat-select name="addMessage" [(ngModel)]="toastOption.addMessage">
         <mat-option value="true">Yes</mat-option>
-        <mat-option value="false">No</mat-option>
+        <mat-option value="">No</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -48,10 +48,10 @@
 
   <div>
     <mat-form-field>
-      <mat-label>Add text under title?</mat-label>
+      <mat-label>Add button?</mat-label>
       <mat-select name="addButton" [(ngModel)]="toastOption.addButton">
         <mat-option value="true">Yes</mat-option>
-        <mat-option value="false">No</mat-option>
+        <mat-option value="">No</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

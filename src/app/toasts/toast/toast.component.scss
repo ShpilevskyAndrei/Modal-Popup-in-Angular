@@ -21,10 +21,6 @@
   display: flex
 }
 
-.text-container p {
-  margin: 12px 0;
-}
-
 .close-button-container {
   margin: 10px;
 }
@@ -167,4 +163,14 @@
 
 .action-button-for-system {
   background-color: #368ACE;
+}
+
+//text
+
+.titleText {
+  font-weight: 550;
+}
+
+.text-container p {
+  margin: 12px 0;
 }

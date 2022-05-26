@@ -5,7 +5,8 @@ import {IToastOptions} from "./interfaces/toast-options";
 
 @Injectable()
 export class ToastDataService {
-  public toastsData: BehaviorSubject<IToastOptions | null> = new BehaviorSubject<IToastOptions | null>(null)
+  public toastsData: BehaviorSubject<IToastOptions | null> =
+    new BehaviorSubject<IToastOptions | null>(null)
 
   constructor() {}
 

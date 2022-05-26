@@ -6,7 +6,7 @@
         <mat-icon class="icon {{(toast$ | async)?.toastType}}-icon">{{icon(toast$ | async)}}</mat-icon>
       </div>
       <div class="text-container">
-        <p>
+        <p class="titleText">
           {{(toast$ | async)?.title || 'You didn\'t entry some title'}}
         </p>
         <p *ngIf="(toast$ | async)?.addMessage">{{(toast$| async)?.message ||

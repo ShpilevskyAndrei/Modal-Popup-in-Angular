@@ -10,8 +10,4 @@ export class AppComponent {
   @Input() public toastData: any
 
   title = 'modal-popup-in-angular';
-
-  public formClicked(toastData:IToastOptions): void {
-    console.log('toastData', toastData)
-  }
 }
