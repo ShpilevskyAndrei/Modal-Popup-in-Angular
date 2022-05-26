@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Observable} from "rxjs";
 
-import {ToastType, toastType} from "../enums/toast-type";
+import {ToastType} from "../enums/toast-type";
 import {IToastOptions} from "../interfaces/toast-options";
 import {ToastDataService} from "../toast-data-service";
 
@@ -19,15 +19,6 @@ export class ToastComponent {
 
   constructor(private toastService: ToastDataService) {
   }
-
-
-  //ЗДЕСЬ ДОЛЖЕН БЫТЬ ОБЪЕКТ ИЗ FORM.COMP - toastOption
-
-  toastType: toastType = 'info'; // 'error' | 'warning' | 'info' | 'success' | 'system'
-  // get value from set func
-
-  width: 'long' | 'short' = 'long'; // 'long' | 'short'
-  // get value from set func
 
   public icon(toast: IToastOptions | null) {
     if (!toast) {
@@ -48,43 +39,27 @@ export class ToastComponent {
     }
   }
 
-  toastHeader: string = '' || `You didn't entry some ${this.toastType} title`; // any text
-  // get value from set func
-
-  toastTextAdd: boolean = true;
-  // get value from set func
-
-  toastText: string =
-    '' || `You didn't entry some ${this.toastType} message`; // any text
-  // get value from set func
-
-  button: boolean = true;
-  // get value from set func
-
-  actionButtonTextGenerator = (): string | null => {
-    if (this.toastType === 'error') {
+  public actionButtonTextGenerator (toast: IToastOptions | null) {
+    if (!toast) {
+      return null
+    }
+    if (toast.toastType === ToastType.error) {
       return `Leave`
-    } else if (this.toastType === 'warning') {
+    } else if (toast.toastType === ToastType.warning) {
       return `Get started`
-    } else if (this.toastType === 'info') {
+    } else if (toast.toastType === ToastType.info) {
       return `Okay`
-    } else if (this.toastType === 'success') {
+    } else if (toast.toastType === ToastType.success) {
       return `Got it!`
-    } else if (this.toastType === 'system') {
+    } else if (toast.toastType === ToastType.system) {
       return `Info`
     } else {
       return null
     }
   }
 
-  actionButtonText = (): string | false => {
-    return ('' || `${this.actionButtonTextGenerator()}`)
-  }
-
-  // get value from set func
-
   buttonTest() {
-    console.log(this.actionButtonText());
+    console.log('pressed button');
   }
 
 }

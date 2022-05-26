@@ -1,4 +1,5 @@
-<div *ngIf="toast$ | async" class="toast {{toastType}} {{width}}" id="toast">
+<div *ngIf="toast$ | async" class="toast {{(toast$ | async)?.toastType}}
+{{(toast$ | async)?.width}}" id="toast">
   <div class="toast-container-without-action-button">
     <div class="icon-text-container">
       <div class="icon-container">
@@ -6,9 +7,10 @@
       </div>
       <div class="text-container">
         <p>
-          <b>{{toastHeader}}</b>
+          {{(toast$ | async)?.title || 'You didn\'t entry some title'}}
         </p>
-        <p *ngIf="toastTextAdd">{{(toast$| async)?.title}}
+        <p *ngIf="(toast$ | async)?.addMessage">{{(toast$| async)?.message ||
+        'You didn\'t entry some message'}}
         </p>
       </div>
     </div>
@@ -17,10 +19,10 @@
     </div>
   </div>
   <div class="action-button-container">
-    <button class="action-button-for-{{toastType}} button-pointer action-button"
-            *ngIf="button"
+    <button class="action-button-for-{{(toast$ | async)?.toastType}} button-pointer action-button"
+            *ngIf="(toast$ | async)?.addButton"
             (click)="buttonTest()">
-      {{actionButtonText()}}
+      {{(toast$ | async)?.buttonText || actionButtonTextGenerator(toast$ | async)}}
     </button>
   </div>
 </div>
