@@ -1,8 +1,9 @@
 import {Component, Input} from '@angular/core';
+import {Observable} from "rxjs";
 
-import {toastType} from "../enums/toast-type";
-import {iconType} from "../enums/icon-type";
+import {ToastType, toastType} from "../enums/toast-type";
 import {IToastOptions} from "../interfaces/toast-options";
+import {ToastDataService} from "../toast-data-service";
 
 
 @Component({
@@ -14,7 +15,12 @@ import {IToastOptions} from "../interfaces/toast-options";
 export class ToastComponent {
   @Input() public toastData!: IToastOptions;
 
-constructor() {}
+  public toast$: Observable<IToastOptions | null> = this.toastService.toastsData.asObservable()
+
+  constructor(private toastService: ToastDataService) {
+  }
+
+
   //ЗДЕСЬ ДОЛЖЕН БЫТЬ ОБЪЕКТ ИЗ FORM.COMP - toastOption
 
   toastType: toastType = 'info'; // 'error' | 'warning' | 'info' | 'success' | 'system'
@@ -23,21 +29,25 @@ constructor() {}
   width: 'long' | 'short' = 'long'; // 'long' | 'short'
   // get value from set func
 
-  icon = ():iconType | null => {
-    if (this.toastType === 'error') {
+  public icon(toast: IToastOptions | null) {
+    if (!toast) {
+      return null
+    }
+    if (toast.toastType === ToastType.error) {
       return `error_outline`
-    } else if (this.toastType === 'warning') {
+    } else if (toast.toastType === ToastType.warning) {
       return `warning`
-    } else if (this.toastType === 'info') {
+    } else if (toast.toastType === ToastType.info) {
       return `info`
-    } else if (this.toastType === 'success') {
+    } else if (toast.toastType === ToastType.success) {
       return `check_circle_outline`
-    } else if (this.toastType === 'system') {
+    } else if (toast.toastType === ToastType.system) {
       return `info`
     } else {
       return null
     }
   }
+
   toastHeader: string = '' || `You didn't entry some ${this.toastType} title`; // any text
   // get value from set func
 

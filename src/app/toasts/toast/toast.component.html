@@ -1,26 +1,26 @@
-<div class="toast {{toastType}} {{width}}" id="toast">
+<div *ngIf="toast$ | async" class="toast {{toastType}} {{width}}" id="toast">
   <div class="toast-container-without-action-button">
     <div class="icon-text-container">
       <div class="icon-container">
-        <mat-icon class="icon {{toastType}}-icon">{{icon()}}</mat-icon>
+        <mat-icon class="icon {{(toast$ | async)?.toastType}}-icon">{{icon(toast$ | async)}}</mat-icon>
       </div>
       <div class="text-container">
-          <p>
-            <b>{{toastHeader}}</b>
-          </p>
-          <p *ngIf="toastTextAdd">{{toastText}}
-          </p>
+        <p>
+          <b>{{toastHeader}}</b>
+        </p>
+        <p *ngIf="toastTextAdd">{{(toast$| async)?.title}}
+        </p>
       </div>
     </div>
-      <div class="close-button-container">
-        <mat-icon class="button-pointer">close</mat-icon>
-      </div>
+    <div class="close-button-container">
+      <mat-icon class="button-pointer">close</mat-icon>
+    </div>
   </div>
-    <div class="action-button-container">
-      <button class="action-button-for-{{toastType}} button-pointer action-button"
-      *ngIf="button"
-              (click)="buttonTest()">
-        {{actionButtonText()}}
-      </button>
-    </div>
+  <div class="action-button-container">
+    <button class="action-button-for-{{toastType}} button-pointer action-button"
+            *ngIf="button"
+            (click)="buttonTest()">
+      {{actionButtonText()}}
+    </button>
+  </div>
 </div>

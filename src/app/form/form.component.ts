@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {ToastDataService} from "../toasts/toast-data-service";
 
 @Component({
   selector: 'app-form',
@@ -6,11 +7,11 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-
-  @Output() formClicked: EventEmitter<any> = new EventEmitter<any>()
+  constructor(private toastService: ToastDataService) {
+  }
 
   toastOption: any = {
-    toastType: '' ,
+    toastType: '',
     width: '',
     title: '',
     addMessage: '',
@@ -19,8 +20,8 @@ export class FormComponent {
     buttonText: '',
   }
 
-  returnToastOptions (): void {
-    this.formClicked.emit(this.toastOption);
+  returnToastOptions(): void {
+    this.toastService.toastsData.next({...this.toastOption})
     console.log(this.toastOption)
   }
 }
