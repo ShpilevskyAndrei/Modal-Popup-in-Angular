@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {Observable} from "rxjs";
+import { Component, Input } from '@angular/core';
 
-import {ToastType} from "../enums/toast-type";
-import {IToastOptions} from "../interfaces/toast-options";
-import {ToastDataService} from "../toast-data-service";
-
+import { ButtonType } from "../enums/button-type";
+import { IconType } from "../enums/icon-type";
+import { IToastOptions } from "../interfaces/toast-options";
+import { ToastDataService } from "../toast-data-service";
+import { ToastType } from "../enums/toast-type";
 
 @Component({
   selector: 'app-toast',
@@ -13,54 +13,57 @@ import {ToastDataService} from "../toast-data-service";
 })
 
 export class ToastComponent {
-  @Input() public toastData!: IToastOptions;
+  @Input() public toastData: IToastOptions | null = null;
 
-  public toast$: Observable<IToastOptions | null> = this.toastService.toastsData.asObservable()
-
-  constructor(private toastService: ToastDataService) {
+  constructor(private toastDataService: ToastDataService) {
   }
 
-  public icon(toast: IToastOptions | null) {
-    if (!toast) {
+  public icon():IconType | null {
+    if (!this.toastData) {
       return null
     }
-    if (toast.toastType === ToastType.error) {
-      return `error_outline`
-    } else if (toast.toastType === ToastType.warning) {
-      return `warning`
-    } else if (toast.toastType === ToastType.info) {
-      return `info`
-    } else if (toast.toastType === ToastType.success) {
-      return `check_circle_outline`
-    } else if (toast.toastType === ToastType.system) {
-      return `info`
-    } else {
-      return null
+    switch (this.toastData.toastType) {
+      case ToastType.error:
+        return IconType.error_outline;
+      case ToastType.warning:
+        return IconType.warning;
+      case ToastType.info:
+        return IconType.info;
+      case ToastType.success:
+        return IconType.check_circle_outline;
+      case ToastType.system:
+        return IconType.info;
+      default:
+        return null;
     }
   }
 
-  public actionButtonTextGenerator (toast: IToastOptions | null) {
-    if (!toast) {
+  public actionButtonTextGenerator(): ButtonType | null {
+    if (!this.toastData) {
       return null
     }
-    if (toast.toastType === ToastType.error) {
-      return `Leave`
-    } else if (toast.toastType === ToastType.warning) {
-      return `Get started`
-    } else if (toast.toastType === ToastType.info) {
-      return `Okay`
-    } else if (toast.toastType === ToastType.success) {
-      return `Got it!`
-    } else if (toast.toastType === ToastType.system) {
-      return `Info`
-    } else {
-      return null
+    switch (this.toastData.toastType) {
+      case ToastType.error:
+        return ButtonType.Leave;
+      case ToastType.warning:
+        return ButtonType["Get started"];
+      case ToastType.info:
+        return ButtonType.Okay;
+      case ToastType.success:
+        return ButtonType["Got it!"];
+      case ToastType.system:
+        return ButtonType.Info;
+      default:
+        return null;
     }
   }
 
   buttonTest() {
+    this.closeToast()
     console.log('pressed button');
   }
 
+  closeToast() {
+    this.toastDataService.deleteToast(this.toastData?.id)
+  }
 }
-

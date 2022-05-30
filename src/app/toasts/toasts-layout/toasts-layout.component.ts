@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Observable } from "rxjs";
+
+import { IToastOptions } from "../interfaces/toast-options";
+import { ToastDataService } from "../toast-data-service";
 
 @Component({
   selector: 'app-toasts-layout',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./toasts-layout.component.scss']
 })
 export class ToastsLayoutComponent {
+  public toasts$: Observable<IToastOptions[] | null> = this.toastDataService.toastsData.asObservable()
+
+  constructor(private toastDataService: ToastDataService) {
+  }
 
 }

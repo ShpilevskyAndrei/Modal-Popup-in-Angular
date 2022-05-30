@@ -9,5 +9,5 @@ import {IToastOptions} from "./toasts/interfaces/toast-options";
 export class AppComponent {
   @Input() public toastData: any
 
-  title = 'modal-popup-in-angular';
+  title = 'Loading...';
 }

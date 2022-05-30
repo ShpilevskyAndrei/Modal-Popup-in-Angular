@@ -1,4 +1,6 @@
-<form class="form-container">
+<form>
+  <div class="form-container">
+  <div class="first-form-container">
   <div>
     <mat-form-field>
       <mat-label>Select a type of toast</mat-label>
@@ -38,7 +40,9 @@
       </mat-select>
     </mat-form-field>
   </div>
+  </div>
 
+  <div class="second-form-container">
   <div>
     <mat-form-field>
       <mat-label>Write the text under title</mat-label>
@@ -63,6 +67,14 @@
     </mat-form-field>
   </div>
 
+  <div>
+    <mat-form-field>
+      <mat-label>Time out</mat-label>
+      <input matInput name="timeOut" [(ngModel)]="toastOption.timeOut">
+    </mat-form-field>
+  </div>
+  </div>
+  </div>
   <mat-button-toggle (click)="returnToastOptions()">SHOW GENERATED TOAST</mat-button-toggle>
 
 </form>

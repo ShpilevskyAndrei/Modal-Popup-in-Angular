@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
-import {ToastDataService} from "../toasts/toast-data-service";
+import { Component } from '@angular/core';
+
+import { IToastOptions } from "../toasts/interfaces/toast-options";
+import { ToastService } from "../toasts/toast-sevice";
+import { ToastType } from "../toasts/enums/toast-type";
 
 @Component({
   selector: 'app-form',
@@ -7,21 +10,21 @@ import {ToastDataService} from "../toasts/toast-data-service";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  constructor(private toastService: ToastDataService) {
-  }
 
-  public toastOption: any = {
-    toastType: '',
-    width: '',
+  constructor(private toastService: ToastService) {}
+
+  public toastOption: IToastOptions = {
+    toastType: ToastType.warning,
+    width: null,
     title: '',
-    addMessage: '',
+    addMessage: false,
     message: '',
-    addButton: '',
+    addButton: false,
     buttonText: '',
+    timeOut: null,
   }
 
   returnToastOptions(): void {
-    this.toastService.toastsData.next({...this.toastOption})
-    console.log(this.toastOption)
+    this.toastService.addToast(this.toastOption)
   }
 }

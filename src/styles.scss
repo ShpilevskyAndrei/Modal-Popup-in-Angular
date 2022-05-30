@@ -36,4 +36,4 @@ $modal-popup-in-angular-theme: mat.define-light-theme((
 @import '~@angular/cdk/overlay-prebuilt.css';
 
 html, body { height: 100%; }
-body { margin: 0 20px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 40px; height: auto; font-family: Roboto, "Helvetica Neue", sans-serif; }

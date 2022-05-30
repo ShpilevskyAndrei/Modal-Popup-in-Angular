@@ -1,11 +1,14 @@
-import {ToastType} from "../enums/toast-type";
+import { ToastType } from "../enums/toast-type";
+import { WidthType } from "../enums/width-type";
 
 export interface IToastOptions {
   toastType: ToastType,
-  width: "short" | "long",
   title: string,
-  addMessage: boolean,
-  message: string,
-  addButton: boolean,
-  buttonText: string,
+  width?: WidthType | null,
+  addMessage?: boolean,
+  message?: string | null,
+  addButton?: boolean,
+  buttonText?: string | null,
+  timeOut?: number | null,
+  id?: number,
 }

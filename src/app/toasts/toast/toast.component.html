@@ -1,28 +1,28 @@
-<div *ngIf="toast$ | async" class="toast {{(toast$ | async)?.toastType}}
-{{(toast$ | async)?.width}}" id="toast">
+<div *ngIf="toastData" class="toast {{toastData?.toastType}}
+{{toastData?.width}}" id="toast">
   <div class="toast-container-without-action-button">
     <div class="icon-text-container">
       <div class="icon-container">
-        <mat-icon class="icon {{(toast$ | async)?.toastType}}-icon">{{icon(toast$ | async)}}</mat-icon>
+        <mat-icon class="icon {{toastData?.toastType}}-icon">{{icon()}}</mat-icon>
       </div>
       <div class="text-container">
         <p class="titleText">
-          {{(toast$ | async)?.title || 'You didn\'t entry some title'}}
+          {{toastData?.title || 'You didn\'t entry some title'}}
         </p>
-        <p *ngIf="(toast$ | async)?.addMessage">{{(toast$| async)?.message ||
+        <p *ngIf="toastData?.addMessage">{{toastData?.message ||
         'You didn\'t entry some message'}}
         </p>
       </div>
     </div>
     <div class="close-button-container">
-      <mat-icon class="button-pointer">close</mat-icon>
+      <mat-icon class="button-pointer" (click)="closeToast()">close</mat-icon>
     </div>
   </div>
   <div class="action-button-container">
-    <button class="action-button-for-{{(toast$ | async)?.toastType}} button-pointer action-button"
-            *ngIf="(toast$ | async)?.addButton"
+    <button class="action-button-for-{{toastData?.toastType}} button-pointer action-button"
+            *ngIf="toastData?.addButton"
             (click)="buttonTest()">
-      {{(toast$ | async)?.buttonText || actionButtonTextGenerator(toast$ | async)}}
+      {{toastData?.buttonText || actionButtonTextGenerator()}}
     </button>
   </div>
 </div>

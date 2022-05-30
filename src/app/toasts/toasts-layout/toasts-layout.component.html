@@ -1,1 +1,1 @@
-<p>toasts-layout works!</p>
+<app-toast *ngFor="let popup of toasts$ | async" [toastData]="popup"></app-toast>
