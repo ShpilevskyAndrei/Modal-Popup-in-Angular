@@ -1,28 +1,40 @@
-<div *ngIf="toastData" class="toast {{toastData?.toastType}}
-{{toastData?.width}}" id="toast">
-  <div class="toast-container-without-action-button">
-    <div class="icon-text-container">
-      <div class="icon-container">
-        <mat-icon class="icon {{toastData?.toastType}}-icon">{{icon()}}</mat-icon>
-      </div>
-      <div class="text-container">
-        <p class="titleText">
-          {{toastData?.title || 'You didn\'t entry some title'}}
-        </p>
-        <p *ngIf="toastData?.addMessage">{{toastData?.message ||
-        'You didn\'t entry some message'}}
-        </p>
-      </div>
+<div
+    *ngIf="toastData"
+    class="toast {{ toastData?.toastType }}
+{{ toastData?.width }}"
+    id="toast"
+>
+    <div class="toast-container-without-action-button">
+        <div class="icon-text-container">
+            <div class="icon-container">
+                <mat-icon class="icon {{ toastData?.toastType }}-icon">{{
+                    icon()
+                }}</mat-icon>
+            </div>
+            <div class="text-container">
+                <p class="titleText">
+                    {{ toastData?.title || "You didn't entry some title" }}
+                </p>
+                <p *ngIf="toastData?.addMessage">
+                    {{ toastData?.message || "You didn't entry some message" }}
+                </p>
+            </div>
+        </div>
+        <div class="close-button-container">
+            <mat-icon class="button-pointer" (click)="closeToast()"
+                >close</mat-icon
+            >
+        </div>
     </div>
-    <div class="close-button-container">
-      <mat-icon class="button-pointer" (click)="closeToast()">close</mat-icon>
-    </div>
-  </div>
-  <div class="action-button-container">
-    <button class="action-button-for-{{toastData?.toastType}} button-pointer action-button"
+    <div class="action-button-container">
+        <button
+            class="action-button-for-{{
+                toastData?.toastType
+            }} button-pointer action-button"
             *ngIf="toastData?.addButton"
-            (click)="buttonTest()">
-      {{toastData?.buttonText || actionButtonTextGenerator()}}
-    </button>
-  </div>
+            (click)="buttonTest()"
+        >
+            {{ toastData?.buttonText || actionButtonTextGenerator() }}
+        </button>
+    </div>
 </div>

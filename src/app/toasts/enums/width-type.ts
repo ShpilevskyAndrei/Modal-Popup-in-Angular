@@ -1,4 +1,4 @@
 export enum WidthType {
-  long = 'long',
-  short = 'short',
+    long = 'long',
+    short = 'short',
 }

@@ -1,28 +1,31 @@
-import { ComponentPortal } from "@angular/cdk/portal";
+import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
-import { Overlay } from "@angular/cdk/overlay";
+import { Overlay } from '@angular/cdk/overlay';
 
-import { IToastOptions } from "./interfaces/toast-options";
-import { ToastDataService } from "./toast-data-service";
-import { ToastsLayoutComponent } from "./toasts-layout/toasts-layout.component";
+import { IToastOptions } from './interfaces/toast-options';
+import { ToastDataService } from './toast-data-service';
+import { ToastsLayoutComponent } from './toasts-layout/toasts-layout.component';
 
 @Injectable()
 export class ToastService {
+    public constructor(
+        private toastDataService: ToastDataService,
+        private overlay: Overlay
+    ) {
+        const portalToast = new ComponentPortal(ToastsLayoutComponent);
 
-  constructor(
-    private toastDataService: ToastDataService,
-    private overlay: Overlay,
-  ) {
-    const portalToast = new ComponentPortal(ToastsLayoutComponent)
+        const createOverlay = this.overlay.create({
+            positionStrategy: this.overlay
+                .position()
+                .global()
+                .top('10px')
+                .centerHorizontally(),
+        });
 
-    const add = this.overlay.create({
-      positionStrategy: this.overlay.position().global().top('10px').centerHorizontally()
-    });
+        createOverlay.attach(portalToast);
+    }
 
-    add.attach(portalToast);
-  }
-
-  public addToast(config: IToastOptions) {
-    this.toastDataService.addToast(config)
-  }
+    public addToast(config: IToastOptions): void {
+        this.toastDataService.addToast(config);
+    }
 }

@@ -10,167 +10,167 @@
     animation-name: slideIn;
     justify-content: space-between;
     height: auto;
-  }
+}
 
 .toast-container-without-action-button {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon-text-container {
-  display: flex
+    display: flex;
 }
 
 .close-button-container {
-  margin: 10px;
+    margin: 10px;
 }
 
 .action-button-container {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 //sizes
-  .short {
+.short {
     width: 200px;
     max-width: 200px;
-  }
+}
 
-  .long {
+.long {
     width: 400px;
     max-width: 400px;
-  }
+}
 
 //popup show animation
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .toast {
-      width: auto;
+        width: auto;
     }
-  }
+}
 
-  @keyframes slideIn {
+@keyframes slideIn {
     from {
-      margin-top: -20%;
-      opacity: 0;
+        margin-top: -20%;
+        opacity: 0;
     }
 
     to {
-      margin-top: 0;
-      opacity: 1;
+        margin-top: 0;
+        opacity: 1;
     }
-  }
+}
 
 //popup close animation
-  .toast-closing {
+.toast-closing {
     animation-duration: 1s;
     animation-name: slideOut;
-  }
+}
 
-  @keyframes slideOut {
+@keyframes slideOut {
     from {
-      opacity: 1;
+        opacity: 1;
     }
 
     to {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}
 
 //popups styles
 .error {
-  background-color: #FDECE9;
-  border-color: #EB3D26;
+    background-color: #fdece9;
+    border-color: #eb3d26;
 }
 
 .warning {
-  background-color: #FFF1E7;
-  border-color: #FA9850;
+    background-color: #fff1e7;
+    border-color: #fa9850;
 }
 
 .info {
-  background-color: #F2F5F5;
-  border-color: #798787;
+    background-color: #f2f5f5;
+    border-color: #798787;
 }
 
 .success {
-  background-color: #ECF9F4;
-  border-color: #12AB74;
+    background-color: #ecf9f4;
+    border-color: #12ab74;
 }
 
 .system {
-  background-color: #EEF7FF;
-  border-color: #368ACE;
+    background-color: #eef7ff;
+    border-color: #368ace;
 }
 
 //icons
 
 .icon {
     margin: 10px;
-  }
+}
 
 .error-icon {
-    color: #EB3D26;
-  }
+    color: #eb3d26;
+}
 
 .warning-icon {
-    color: #F87E25;
-  }
+    color: #f87e25;
+}
 
 .info-icon {
-  color: #F2F5F5;
-  background-color: #131314;
-  border-radius: 50px;
-  }
+    color: #f2f5f5;
+    background-color: #131314;
+    border-radius: 50px;
+}
 
 .success-icon {
-    color: #4CAF50;
-  }
+    color: #4caf50;
+}
 
 .system-icon {
-  color: #EEF7FF;
-  background-color: #368ACE;
-  border-radius: 50px;
-  }
+    color: #eef7ff;
+    background-color: #368ace;
+    border-radius: 50px;
+}
 
 //buttons
 .button-pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .action-button {
-  border: 0;
-  border-radius: 2px;
-  color: white;
-  padding: 5px 10px;
-  margin: 10px;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px;
 }
 
 .action-button-for-error {
-  background-color: #DC3737;
+    background-color: #dc3737;
 }
 
 .action-button-for-warning {
-  background-color: #F87E25;
+    background-color: #f87e25;
 }
 
 .action-button-for-info {
-  background-color: #131314;
+    background-color: #131314;
 }
 
 .action-button-for-success {
-  background-color: #12AB74;
+    background-color: #12ab74;
 }
 
 .action-button-for-system {
-  background-color: #368ACE;
+    background-color: #368ace;
 }
 
 //text
 
 .titleText {
-  font-weight: 550;
+    font-weight: 550;
 }
 
 .text-container p {
-  margin: 12px 0;
+    margin: 12px 0;
 }

@@ -1,1 +1,6 @@
-<app-toast *ngFor="let popup of toasts$ | async" [toastData]="popup"></app-toast>
+<app-toast
+    class="layout-container"
+    *ngFor="let popup of toasts$ | async"
+    [toastData]="popup"
+>
+</app-toast>

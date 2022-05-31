@@ -1,11 +1,12 @@
-  .form-container {
+.form-container {
     display: flex;
-  }
+}
 
-  .first-form-container, .second-form-container{
+.first-form-container,
+.second-form-container {
     margin: 30px;
-  }
+}
 
-  mat-button-toggle {
+mat-button-toggle {
     width: 100%;
-  }
+}
