@@ -15,19 +15,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
-import { AgroexToastComponent } from './agroex-toasts/agroex-toast/agroex-toast.component';
-import { AgroexToastDataService } from './agroex-toasts/agroex-toast-data.service';
-import { AgroexToastService } from './agroex-toasts/agroex-toast.service';
-import { AgroexToastsLayoutComponent } from './agroex-toasts/agroex-toasts-layout/agroex-toasts-layout.component';
+import { NgxAgroexToastModule } from '../../projects/ngx-agroex-toast/src/lib/ngx-agroex-toast.module';
+import { FormComponent } from './form/form.component'
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        FormComponent,
-        AgroexToastComponent,
-        AgroexToastsLayoutComponent,
-    ],
+  declarations: [FormComponent, AppComponent],
     imports: [
         BrowserAnimationsModule,
         BrowserModule,
@@ -41,8 +33,8 @@ import { AgroexToastsLayoutComponent } from './agroex-toasts/agroex-toasts-layou
         NoopAnimationsModule,
         OverlayModule,
         MatButtonModule,
+        NgxAgroexToastModule,
     ],
-    providers: [AgroexToastDataService, AgroexToastService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

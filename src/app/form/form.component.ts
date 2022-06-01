@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { AgroexToastService } from '../agroex-toasts/agroex-toast.service';
-import { IToastOptions } from '../agroex-toasts/interfaces/toast-options';
-import { ToastType } from '../agroex-toasts/enums/toast-type';
+import { AgroexToastService } from '../../../projects/ngx-agroex-toast/src/lib/agroex-toast.service'
+import { IToastOptions } from '../../../projects/ngx-agroex-toast/src/lib/interfaces/toast-options'
+import { ToastType } from '../../../projects/ngx-agroex-toast/src/lib/enums/toast-type'
+
+
 
 @Component({
     selector: 'app-form',
