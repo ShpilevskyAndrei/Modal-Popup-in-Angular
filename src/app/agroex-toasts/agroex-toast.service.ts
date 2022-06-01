@@ -2,11 +2,11 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 
-import { IToastOptions } from './interfaces/toast-options';
 import { AgroexToastDataService } from './agroex-toast-data.service';
 import { AgroexToastsLayoutComponent } from './agroex-toasts-layout/agroex-toasts-layout.component';
+import { IToastOptions } from './interfaces/toast-options';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AgroexToastService {
     constructor(
         private toastDataService: AgroexToastDataService,

@@ -8,7 +8,7 @@
     <div class="toast-container-without-action-button">
         <div class="icon-text-container">
             <div class="icon-container">
-                <mat-icon class="icon {{ toastData.toastType }}-icon">{{
+                <mat-icon class="icon" [ngClass]="iconTypeStyle">{{
                     icon
                 }}</mat-icon>
             </div>
@@ -29,9 +29,9 @@
     </div>
     <div class="action-button-container">
         <button
+            *ngIf="toastData?.buttonText"
             class="action-button"
             [ngClass]="actionButtonType"
-            *ngIf="toastData?.buttonText"
             (click)="toastButton()"
         >
             {{ toastData?.buttonText }}

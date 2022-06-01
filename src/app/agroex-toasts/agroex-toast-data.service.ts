@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { IToastOptions } from './interfaces/toast-options';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AgroexToastDataService {
     public toastsData: BehaviorSubject<IToastOptions[]> = new BehaviorSubject<
         IToastOptions[]
@@ -15,7 +15,7 @@ export class AgroexToastDataService {
         this.toastsData.next([{ ...config, id }, ...this.toastsData.value]);
     }
 
-    public deleteToast(id: number | undefined): void {
+    public deleteToast(id?: number): void {
         this.toastsData.next(
             this.toastsData.value.filter(
                 (toast: IToastOptions) => toast.id !== id

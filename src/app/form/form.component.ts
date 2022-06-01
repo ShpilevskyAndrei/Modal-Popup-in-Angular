@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { IToastOptions } from '../agroex-toasts/interfaces/toast-options';
 import { AgroexToastService } from '../agroex-toasts/agroex-toast.service';
+import { IToastOptions } from '../agroex-toasts/interfaces/toast-options';
 import { ToastType } from '../agroex-toasts/enums/toast-type';
 
 @Component({
     selector: 'app-form',
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.scss'],
+    styles: [
+        `
+            :host {
+                .form-container {
+                    display: flex;
+                }
+
+                .first-form-container,
+                .second-form-container {
+                    margin: 30px;
+                }
+
+                .action-button-container {
+                    margin-top: 50px;
+                }
+
+                .action-button {
+                    width: 100%;
+                    height: 100px;
+                }
+            }
+        `,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormComponent {
     public toastOption: IToastOptions = {

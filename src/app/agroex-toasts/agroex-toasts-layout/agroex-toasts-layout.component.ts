@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { IToastOptions } from '../interfaces/toast-options';
@@ -6,7 +6,13 @@ import { AgroexToastDataService } from '../agroex-toast-data.service';
 
 @Component({
     selector: 'app-agroex-toasts-layout',
-    templateUrl: './agroex-toasts-layout.component.html',
+    template: `<app-agroex-toast
+        class="layout-container"
+        *ngFor="let toast of toasts$ | async"
+        [toastData]="toast"
+    >
+    </app-agroex-toast>`,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgroexToastsLayoutComponent {
     public toasts$: Observable<IToastOptions[]> =
