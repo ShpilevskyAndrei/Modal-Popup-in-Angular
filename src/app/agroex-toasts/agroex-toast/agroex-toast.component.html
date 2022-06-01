@@ -1,0 +1,40 @@
+<div
+    *ngIf="toastData"
+    #toast
+    class="toast"
+    [ngClass]="toastData.toastType"
+    [style.width]="toastData?.width || '60vw'"
+>
+    <div class="toast-container-without-action-button">
+        <div class="icon-text-container">
+            <div class="icon-container">
+                <mat-icon class="icon {{ toastData.toastType }}-icon">{{
+                    icon
+                }}</mat-icon>
+            </div>
+            <div class="text-container">
+                <p class="titleText">
+                    {{ toastData.title }}
+                </p>
+                <p *ngIf="toastData?.message" class="messageText">
+                    {{ toastData?.message }}
+                </p>
+            </div>
+        </div>
+        <div class="close-button-container">
+            <mat-icon class="close-button" (click)="closeToast()"
+                >close</mat-icon
+            >
+        </div>
+    </div>
+    <div class="action-button-container">
+        <button
+            class="action-button"
+            [ngClass]="actionButtonType"
+            *ngIf="toastData?.buttonText"
+            (click)="toastButton()"
+        >
+            {{ toastData?.buttonText }}
+        </button>
+    </div>
+</div>

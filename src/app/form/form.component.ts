@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { IToastOptions } from '../toasts/interfaces/toast-options';
-import { ToastService } from '../toasts/toast-sevice';
-import { ToastType } from '../toasts/enums/toast-type';
+import { IToastOptions } from '../agroex-toasts/interfaces/toast-options';
+import { AgroexToastService } from '../agroex-toasts/agroex-toast.service';
+import { ToastType } from '../agroex-toasts/enums/toast-type';
 
 @Component({
     selector: 'app-form',
@@ -11,17 +11,15 @@ import { ToastType } from '../toasts/enums/toast-type';
 })
 export class FormComponent {
     public toastOption: IToastOptions = {
-        toastType: ToastType.warning,
-        width: null,
+        toastType: ToastType.Warning,
+        width: '',
         title: '',
-        addMessage: false,
         message: '',
-        addButton: false,
         buttonText: '',
-        timeOut: null,
+        timeOut: 5000,
     };
 
-    public constructor(private toastService: ToastService) {}
+    constructor(private toastService: AgroexToastService) {}
 
     public returnToastOptions(): void {
         this.toastService.addToast(this.toastOption);

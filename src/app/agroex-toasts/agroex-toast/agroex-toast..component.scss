@@ -1,0 +1,179 @@
+:host {
+    //containers
+    .toast {
+        border: 1px solid;
+        border-radius: 4px;
+        display: block;
+        align-items: center;
+        align-content: center;
+        margin: 0 0 10px 0;
+        animation: slideIn 1s ease-out;
+    }
+
+    .toast-container-without-action-button {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .icon-text-container {
+        display: flex;
+    }
+
+    .close-button-container {
+        margin: 10px;
+    }
+
+    .action-button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    //sizes
+    .short {
+        width: 40vw;
+        max-width: 40vw;
+    }
+
+    .long {
+        width: 60vw;
+        max-width: 60vw;
+    }
+
+    //popup close animation
+    .toast-closing {
+        animation: slideOut 1.1s ease-out;
+    }
+
+    //popups styles
+    .error {
+        background-color: #fdece9;
+        border-color: #eb3d26;
+    }
+
+    .warning {
+        background-color: #fff1e7;
+        border-color: #fa9850;
+    }
+
+    .info {
+        background-color: #f2f5f5;
+        border-color: #798787;
+    }
+
+    .success {
+        background-color: #ecf9f4;
+        border-color: #12ab74;
+    }
+
+    .system {
+        background-color: #eef7ff;
+        border-color: #368ace;
+    }
+
+    //icons
+
+    .icon {
+        margin: 10px;
+    }
+
+    .error-icon {
+        color: #eb3d26;
+    }
+
+    .warning-icon {
+        color: #f87e25;
+    }
+
+    .info-icon {
+        color: #f2f5f5;
+        background-color: #131314;
+        border-radius: 50px;
+    }
+
+    .success-icon {
+        color: #4caf50;
+    }
+
+    .system-icon {
+        color: #eef7ff;
+        background-color: #368ace;
+        border-radius: 50px;
+    }
+
+    //buttons
+    .close-button {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .action-button {
+        border: 0;
+        border-radius: 2px;
+        color: white;
+        padding: 5px 10px;
+        margin: 10px;
+        word-wrap: anywhere;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .action-button-for-error {
+        background-color: #dc3737;
+    }
+
+    .action-button-for-warning {
+        background-color: #f87e25;
+    }
+
+    .action-button-for-info {
+        background-color: #131314;
+    }
+
+    .action-button-for-success {
+        background-color: #12ab74;
+    }
+
+    .action-button-for-system {
+        background-color: #368ace;
+    }
+
+    //text
+
+    .titleText {
+        font-weight: 550;
+        font-size: 14px;
+        word-wrap: anywhere;
+    }
+
+    .messageText {
+        word-wrap: anywhere;
+        font-size: 14px;
+    }
+
+    .text-container p {
+        margin: 12px 0;
+    }
+
+    //popup show animation
+    @keyframes slideIn {
+        from {
+            margin-top: -20%;
+            opacity: 0;
+        }
+
+        to {
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+
+    //popup close animation
+    @keyframes slideOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}

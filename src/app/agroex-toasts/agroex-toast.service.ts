@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 
 import { IToastOptions } from './interfaces/toast-options';
-import { ToastDataService } from './toast-data-service';
-import { ToastsLayoutComponent } from './toasts-layout/toasts-layout.component';
+import { AgroexToastDataService } from './agroex-toast-data.service';
+import { AgroexToastsLayoutComponent } from './agroex-toasts-layout/agroex-toasts-layout.component';
 
 @Injectable()
-export class ToastService {
-    public constructor(
-        private toastDataService: ToastDataService,
+export class AgroexToastService {
+    constructor(
+        private toastDataService: AgroexToastDataService,
         private overlay: Overlay
     ) {
-        const portalToast = new ComponentPortal(ToastsLayoutComponent);
+        const portalToast = new ComponentPortal(AgroexToastsLayoutComponent);
 
         const createOverlay = this.overlay.create({
             positionStrategy: this.overlay

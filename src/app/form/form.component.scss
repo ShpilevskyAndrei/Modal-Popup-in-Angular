@@ -1,12 +1,19 @@
-.form-container {
-    display: flex;
-}
+:host {
+    .form-container {
+        display: flex;
+    }
 
-.first-form-container,
-.second-form-container {
-    margin: 30px;
-}
+    .first-form-container,
+    .second-form-container {
+        margin: 30px;
+    }
 
-mat-button-toggle {
-    width: 100%;
+    .action-button-container {
+        margin-top: 50px;
+    }
+
+    .action-button {
+        width: 100%;
+        height: 100px;
+    }
 }

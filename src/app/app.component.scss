@@ -1,4 +1,6 @@
-.between {
-    display: flex;
-    justify-content: space-between;
+:host {
+    .between {
+        display: flex;
+        justify-content: space-between;
+    }
 }
