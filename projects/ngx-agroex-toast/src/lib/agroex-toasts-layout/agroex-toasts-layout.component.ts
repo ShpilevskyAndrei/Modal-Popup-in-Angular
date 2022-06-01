@@ -12,6 +12,15 @@ import { AgroexToastDataService } from '../agroex-toast-data.service';
         [toastData]="toast"
     >
     </app-agroex-toast>`,
+    styles: [
+        `
+            :host {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        `,
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgroexToastsLayoutComponent {
