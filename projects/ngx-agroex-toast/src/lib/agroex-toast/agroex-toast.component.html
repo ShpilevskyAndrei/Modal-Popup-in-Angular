@@ -17,7 +17,7 @@
                     {{ toastData.title }}
                 </p>
                 <p *ngIf="toastData.message" class="messageText">
-                    {{ toastData?.message }}
+                    {{ toastData.message }}
                 </p>
             </div>
         </div>
@@ -34,7 +34,7 @@
             [ngClass]="actionButtonType"
             (click)="toastButton()"
         >
-            {{ toastData?.buttonText }}
+            {{ toastData.buttonText }}
         </button>
     </div>
 </div>
