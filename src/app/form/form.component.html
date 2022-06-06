@@ -1,13 +1,10 @@
-<form>
+<form [formGroup]="toastOption">
     <div class="form-container">
         <div class="first-form-container">
             <div>
                 <mat-form-field>
                     <mat-label>Select a type of toast</mat-label>
-                    <mat-select
-                        name="toastType"
-                        [(ngModel)]="toastOption.toastType"
-                    >
+                    <mat-select formControlName="toastType">
                         <mat-option value="error">Error</mat-option>
                         <mat-option value="warning">Warning</mat-option>
                         <mat-option value="success">Success</mat-option>
@@ -20,33 +17,21 @@
             <div>
                 <mat-form-field>
                     <mat-label>Or enter your custom width</mat-label>
-                    <input
-                        matInput
-                        name="width"
-                        [(ngModel)]="toastOption.width"
-                    />
+                    <input matInput formControlName="width" />
                 </mat-form-field>
             </div>
             <br />
             <div>
                 <mat-form-field>
                     <mat-label>Write the title text</mat-label>
-                    <input
-                        matInput
-                        name="title"
-                        [(ngModel)]="toastOption.title"
-                    />
+                    <input matInput formControlName="title" />
                 </mat-form-field>
             </div>
             <br />
             <div>
                 <mat-form-field>
                     <mat-label>Write the text under title</mat-label>
-                    <input
-                        matInput
-                        name="message"
-                        [(ngModel)]="toastOption.message"
-                    />
+                    <input matInput formControlName="message" />
                 </mat-form-field>
             </div>
         </div>
@@ -55,22 +40,14 @@
                 <div>
                     <mat-form-field>
                         <mat-label>Button text</mat-label>
-                        <input
-                            matInput
-                            name="buttonText"
-                            [(ngModel)]="toastOption.buttonText"
-                        />
+                        <input matInput formControlName="buttonText" />
                     </mat-form-field>
                 </div>
                 <br />
                 <div>
                     <mat-form-field>
                         <mat-label>Time out</mat-label>
-                        <input
-                            matInput
-                            name="timeOut"
-                            [(ngModel)]="toastOption.timeOut"
-                        />
+                        <input matInput formControlName="timeOut" />
                     </mat-form-field>
                 </div>
             </div>
