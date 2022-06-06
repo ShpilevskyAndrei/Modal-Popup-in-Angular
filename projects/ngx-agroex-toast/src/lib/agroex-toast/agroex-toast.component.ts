@@ -33,27 +33,21 @@ export class AgroexToastComponent implements OnChanges {
     ) {}
 
     public get iconTypeStyle(): string {
-        if (this.toastData) {
-            return ICON_TYPE_STYLE[this.toastData.toastType];
-        } else {
-            return ICON_TYPE_STYLE[ToastType.Error];
-        }
+        return this.toastData
+            ? ICON_TYPE_STYLE[this.toastData.toastType]
+            : ICON_TYPE_STYLE[ToastType.Error];
     }
 
     public get icon(): string {
-        if (this.toastData) {
-            return ICON_TYPE[this.toastData.toastType];
-        } else {
-            return ICON_TYPE[ToastType.Error];
-        }
+        return this.toastData
+            ? ICON_TYPE[this.toastData.toastType]
+            : ICON_TYPE[ToastType.Error];
     }
 
     public get actionButtonType(): string {
-        if (this.toastData) {
-            return ACTION_BUTTON_TYPE[this.toastData.toastType];
-        } else {
-            return ACTION_BUTTON_TYPE[ToastType.Error];
-        }
+        return this.toastData
+            ? ACTION_BUTTON_TYPE[this.toastData.toastType]
+            : ACTION_BUTTON_TYPE[ToastType.Error];
     }
 
     public toastButton(): void {
