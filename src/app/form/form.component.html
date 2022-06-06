@@ -1,0 +1,65 @@
+<form [formGroup]="toastOption">
+    <div class="form-container">
+        <div class="first-form-container">
+            <div>
+                <mat-form-field>
+                    <mat-label>Select a type of toast</mat-label>
+                    <mat-select formControlName="toastType">
+                        <mat-option value="error">Error</mat-option>
+                        <mat-option value="warning">Warning</mat-option>
+                        <mat-option value="success">Success</mat-option>
+                        <mat-option value="info">Info</mat-option>
+                        <mat-option value="system">System</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <br />
+            <div>
+                <mat-form-field>
+                    <mat-label>Or enter your custom width</mat-label>
+                    <input matInput formControlName="width" />
+                </mat-form-field>
+            </div>
+            <br />
+            <div>
+                <mat-form-field>
+                    <mat-label>Write the title text</mat-label>
+                    <input matInput formControlName="title" />
+                </mat-form-field>
+            </div>
+            <br />
+            <div>
+                <mat-form-field>
+                    <mat-label>Write the text under title</mat-label>
+                    <input matInput formControlName="message" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="second-form-container">
+            <div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Button text</mat-label>
+                        <input matInput formControlName="buttonText" />
+                    </mat-form-field>
+                </div>
+                <br />
+                <div>
+                    <mat-form-field>
+                        <mat-label>Time out</mat-label>
+                        <input matInput formControlName="timeOut" />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="action-button-container">
+                <button
+                    mat-raised-button
+                    class="action-button"
+                    (click)="returnToastOptions()"
+                >
+                    SHOW GENERATED TOAST
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

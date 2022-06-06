@@ -7,9 +7,16 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "strictPropertyInitialization": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "ngx-agroex-toast": [
+        "dist/ngx-agroex-toast/ngx-agroex-toast",
+        "dist/ngx-agroex-toast"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
